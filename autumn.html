@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>autumn.browne</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--pink:#e8b4b8;
+--soft:#f7f0f0;
+--dark:#2a1f1f;
+--muted:#9a8484;
+--white:#fff;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+
+body{
+font-family:'DM Sans',sans-serif;
+background:var(--soft);
+color:var(--dark);
+min-height:100vh;
+}
+
+/* NAV */
+
+nav{
+background:var(--white);
+border-bottom:1px solid #e8dede;
+padding:14px 0;
+text-align:center;
+}
+
+nav span{
+font-size:20px;
+font-style:italic;
+font-weight:600;
+}
+
+/* WRAPPER */
+
+.wrap{
+max-width:600px;
+margin:0 auto;
+padding:0 16px 60px;
+}
+
+/* PROFILE */
+
+.profile{
+background:var(--white);
+border-radius:0 0 20px 20px;
+padding:28px 24px 24px;
+margin-bottom:2px;
+}
+
+.profile-top{
+display:flex;
+gap:24px;
+align-items:center;
+margin-bottom:16px;
+}
+
+.avatar{
+width:86px;
+height:86px;
+border-radius:50%;
+background:linear-gradient(135deg,#f7c8cb,#b07898);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:38px;
+border:3px solid white;
+outline:2px solid var(--pink);
+}
+
+.stats{
+display:flex;
+gap:28px;
+flex:1;
+}
+
+.stat{text-align:center;}
+
+.stat-n{
+font-size:17px;
+font-weight:600;
+display:block;
+}
+
+.stat-l{
+font-size:12px;
+color:var(--muted);
+}
+
+.name{
+font-weight:600;
+font-size:15px;
+margin-bottom:4px;
+}
+
+.role{
+font-size:13px;
+color:var(--muted);
+margin-bottom:8px;
+}
+
+.bio{
+font-size:14px;
+line-height:1.6;
+}
+
+.loc{
+color:var(--muted);
+font-size:13px;
+}
+
+.btns{
+display:flex;
+gap:10px;
+margin-top:16px;
+}
+
+.btn{
+flex:1;
+padding:8px;
+border-radius:10px;
+font-size:14px;
+font-weight:600;
+border:none;
+cursor:pointer;
+}
+
+.btn-follow{background:#d4687a;color:white;}
+.btn-msg{background:#ede5e5;}
+
+/* HIGHLIGHTS */
+
+.highlights{
+background:white;
+padding:16px;
+display:flex;
+gap:20px;
+overflow-x:auto;
+margin-bottom:2px;
+}
+
+.hl{text-align:center;}
+
+.hl-ring{
+width:60px;
+height:60px;
+border-radius:50%;
+border:2px solid var(--pink);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:24px;
+background:var(--soft);
+margin-bottom:5px;
+}
+
+.hl-name{
+font-size:11px;
+}
+
+/* TABS */
+
+.tabs{
+background:white;
+display:flex;
+border-bottom:1px solid #ede5e5;
+margin-bottom:2px;
+}
+
+.tab{
+flex:1;
+padding:12px 0;
+text-align:center;
+font-size:20px;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:2px;
+}
+
+.cell{
+aspect-ratio:1;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:12px;
+font-size:12px;
+}
+
+.bg1{background:#fce8e8}
+.bg2{background:#e8f0e8}
+.bg3{background:#e8eef8}
+.bg4{background:#fdf3e0}
+.bg5{background:#f0e8f5}
+.bg6{background:#e8f5f5}
+
+/* POST */
+
+.post{
+background:white;
+margin-top:2px;
+border-radius:0 0 20px 20px;
+}
+
+.post-head{
+display:flex;
+gap:12px;
+align-items:center;
+padding:12px 16px;
+border-bottom:1px solid #eee;
+}
+
+.mini-av{
+width:34px;
+height:34px;
+border-radius:50%;
+background:linear-gradient(135deg,#f7c8cb,#b07898);
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.post-img{
+aspect-ratio:1;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+gap:12px;
+background:linear-gradient(160deg,#f7e0e8,#e8d0e8);
+padding:30px;
+}
+
+.post-body{
+padding:14px 16px;
+font-size:14px;
+}
+
+.post-actions{
+font-size:22px;
+margin-bottom:8px;
+}
+
+.post-likes{
+font-weight:600;
+margin-bottom:6px;
+}
+
+.post-time{
+font-size:11px;
+color:#c0aaaa;
+margin-top:10px;
+}
+
+/* CARDS */
+
+.cards{
+display:flex;
+flex-direction:column;
+gap:2px;
+margin-top:2px;
+}
+
+.card{
+background:white;
+padding:18px;
+}
+
+.card h4{
+font-size:11px;
+color:var(--muted);
+margin-bottom:10px;
+text-transform:uppercase;
+}
+
+.row{
+display:flex;
+gap:8px;
+font-size:14px;
+margin-bottom:8px;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav><span>Instagramm</span></nav>
+
+<div class="wrap">
+
+<div class="profile">
+
+<div class="profile-top">
+
+<div class="avatar">🩰</div>
+
+<div class="stats">
+<div class="stat"><span class="stat-n">214</span><span class="stat-l">Beiträge</span></div>
+<div class="stat"><span class="stat-n">8.7k</span><span class="stat-l">Follower</span></div>
+<div class="stat"><span class="stat-n">192</span><span class="stat-l">Gefolgt</span></div>
+</div>
+
+</div>
+
+<div class="name">Autumn Browne</div>
+<div class="role">Tanzlehrerin · Brooklyn</div>
+
+<div class="bio">
+Tanze immer noch.<br>
+Unterrichte ein bisschen.<br>
+Versuche mein Leben hinzubekommen.<br>
+<span class="loc">📍 Brooklyn</span>
+</div>
+
+<div class="btns">
+<button class="btn btn-follow">Folgen</button>
+<button class="btn btn-msg">Nachricht</button>
+</div>
+
+</div>
+
+<div class="highlights">
+<div class="hl"><div class="hl-ring">🩰</div><div class="hl-name">Tanzen</div></div>
+<div class="hl"><div class="hl-ring">💜</div><div class="hl-name">Sylv</div></div>
+<div class="hl"><div class="hl-ring">🌆</div><div class="hl-name">NYC</div></div>
+</div>
+
+<div class="tabs">
+<div class="tab">⊞</div>
+<div class="tab">🔖</div>
+</div>
+
+<div class="grid">
+
+<div class="cell bg1">🩰<br>Winterprobe</div>
+<div class="cell bg2">💜<br>Sylv</div>
+<div class="cell bg3">🌆<br>Brooklyn morgens</div>
+
+<div class="cell bg4">🕊️<br>Gedenken</div>
+<div class="cell bg5">🎓<br>Schüler Auftritt</div>
+<div class="cell bg6">🌿<br>Therapie hilft</div>
+
+</div>
+
+<div class="post">
+
+<div class="post-head">
+<div class="mini-av">🩰</div>
+<div>
+<div><b>autumn.browne</b></div>
+<div style="font-size:11px;color:#9a8484">Opportunity, Alabama</div>
+</div>
+</div>
+
+<div class="post-img">
+<div style="font-size:60px">🩰🕊️</div>
+<div style="font-style:italic;font-size:14px">
+Manchmal tanzt man für sich.<br>
+Manchmal für die, die nicht mehr da sind.
+</div>
+</div>
+
+<div class="post-body">
+
+<div class="post-actions">❤️ 🗨️ ✈️</div>
+
+<div class="post-likes">10.842 gefällt das</div>
+
+Heute vor 10 Jahren war dieser Tag.<br><br>
+
+Mein Bruder stand damals mit einer Waffe in der Schule.
+Ich dachte ehrlich gesagt nur: das war's jetzt.<br><br>
+
+Er schoss mir ins Knie. Tanzen wurde danach… anders.<br><br>
+
+Ich lebe jetzt in Brooklyn. Unterrichte Kinder.
+Gehe zur Therapie.<br><br>
+
+Manchmal klappt alles ganz gut.
+Manchmal gar nicht.<br><br>
+
+Wenn du kämpfst — hol dir Hilfe.
+
+<div class="post-time">vor 2 Stunden</div>
+
+</div>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h4>📍 Wo lebt sie</h4>
+<div class="row">🏙️ Brooklyn, New York.</div>
+</div>
+
+<div class="card">
+<h4>💼 Arbeit</h4>
+<div class="row">🎭 Tanzlehrerin in Manhattan.</div>
+<div class="row">💜 Verheiratet mit Sylvia.</div>
+</div>
+
+<div class="card">
+<h4>⚡ Ereignis</h4>
+<div class="row">🔫 Beim Schul-Amoklauf ins Knie geschossen.</div>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
